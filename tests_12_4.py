@@ -2,7 +2,9 @@ import unittest
 import logging
 from rt_with_exceptions import Runner
 
-
+logging.basicConfig(level=logging.INFO, filemode='w',
+                    filename='runner_tests.log', encoding='utf-8',
+                    format="%(asctime)s | %(levelname)s | %(message)s")
 
 class RunnerTest(unittest.TestCase):
 
@@ -28,8 +30,6 @@ class RunnerTest(unittest.TestCase):
             logging.warning("Неверный тип данных для объекта Runner", exc_info=True)
 
 
-if __name__ == "__main__":
-     logging.basicConfig(level=logging.INFO, filemode='w', filename='runner_tests.log', encoding='utf-8',
-                        format="%(asctime)s | %(levelname)s | %(massage)s")
 
+if __name__ == "__main__":
      unittest.main()
